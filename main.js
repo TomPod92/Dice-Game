@@ -95,6 +95,7 @@ document.querySelector('.rulesButton').addEventListener('click', function() {
 //---------------FUNCTION----------------------------
 //---------------------------------------------------
 function new_game() {
+    document.querySelector('.rules').classList.toggle('rulesShow');
     scores = [0,0];
     round_score = 0;
     //var active_player = Math.round(Math.random());
