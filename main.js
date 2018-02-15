@@ -96,7 +96,7 @@ document.querySelector('.rulesButton').addEventListener('click', function() {
 //---------------------------------------------------
 function new_game() {
     //it got chainged
-    document.querySelector('.rules').classList.toggle('rulesShow');
+    document.querySelector('.rules').classList.remove('rulesShow');
     scores = [0,0];
     round_score = 0;
     //var active_player = Math.round(Math.random());
