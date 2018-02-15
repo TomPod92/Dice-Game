@@ -95,7 +95,7 @@ document.querySelector('.rulesButton').addEventListener('click', function() {
 //---------------FUNCTION----------------------------
 //---------------------------------------------------
 function new_game() {
-    //it got chainged
+    //it got chainged again
     document.querySelector('.rules').classList.remove('rulesShow');
     scores = [0,0];
     round_score = 0;
