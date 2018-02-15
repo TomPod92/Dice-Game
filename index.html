@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <title>The Pig Game</title>
+</head>
+<body>
+  
+   <!-- UPPER PANEL WITH GAME RULES AND SETTINGS -->
+    <section class="upper" id="top">
+        <div class="wrapper">
+            <h1 class="game_name">the pig game</h1>
+            <input class="player_1" type="text" placeholder="Player 1">
+            <input class="player_2" type="text" placeholder="Player 2">
+            <input type="text" class="final_score" placeholder="Final score">
+            <button class="rulesButton" ><i class="ion-ios-book-outline"></i>Rules</button>
+            <a href="#bottom" id="top" ><button class="play"><i class="ion-ios-play-outline "></i>Let's play!</button></a> 
+        </div>
+        
+    <!-- POP UP RULES OF THE GAME -->   
+        <div class="rules" >
+            <h1>Rules</h1>
+            <p>- The game has 2 players, playing in rounds</p>
+            <p>- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score</p>
+            <p>- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn</p>
+            <p>- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn</p>
+            <p>- The first player to reach 100 points on GLOBAL score wins the game</p>
+        </div>
+        
+    </section>
+    
+    <!-- LOWER PANEL WITH GAME ITSELF -->
+    <section class="lower">
+        <div class="wrapper clearfix">
+            <div class="player-0-panel active">
+                <div class="player-name" id="name-0">Player 1</div>
+                <div class="player-score" id="score-0">43</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-0">11</div>
+                </div>
+            </div>
+            
+            <div class="player-1-panel">
+                <div class="player-name" id="name-1">Player 2</div>
+                <div class="player-score" id="score-1">72</div>
+                <div class="player-current-box">
+                    <div class="player-current-label">Current</div>
+                    <div class="player-current-score" id="current-1">0</div>
+                </div>
+            </div>
+            <div class="change">You have rolled a ONE</div>
+            <div class="change1">You have rolled two SIXES</div>
+            
+            <a href="#top" id="bottom" ><button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button></a>
+            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-restart"><i class="ion-ios-undo-outline"></i>Restart Game</button>
+            
+            <img src="dice-5.png" alt="Dice" class="dice">
+        </div>
+        
+    </section>
+    
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    
+    <script>
+//        jQuery(function($) {
+//           //scroll reset
+//            $.scrollTo(0);
+//            
+//           //scroll
+//             $('#link1').click(function() {
+//                $.scrollTo($('#scroll'), 1000);
+//            });
+//        });
+        
+        $('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+});
+    </script>
+   
+</body>
+</html>
